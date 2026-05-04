@@ -1,0 +1,26 @@
+{
+  "schema": "aether.crash.reporter.v1",
+  "bundleDirectory": "logs/crash-bundles",
+  "include": [
+    "system-events",
+    "service-logs",
+    "active-windows",
+    "service-state",
+    "package-registry",
+    "recovery-report",
+    "replay-metadata"
+  ],
+  "privacy": {
+    "redactUserPaths": true,
+    "includeFileContents": false,
+    "requiresConsentForExport": true
+  },
+  "lastBundles": [
+    {
+      "id": "boot-smoke-001",
+      "createdAt": "2026-05-04T00:00:00.000Z",
+      "reason": "manual smoke bundle",
+      "status": "ready"
+    }
+  ]
+}

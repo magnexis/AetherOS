@@ -1,0 +1,12 @@
+{
+  "schema": "aether.backup.v1",
+  "backupDirectory": "system/backups",
+  "plans": [
+    { "id": "system-daily", "name": "System Daily", "enabled": true, "schedule": "daily:02:00", "targets": ["config", "kernel", "services", "drivers", "pkg", "security"], "retention": 7, "encrypted": true },
+    { "id": "home-weekly", "name": "Home Weekly", "enabled": true, "schedule": "weekly:sunday:03:00", "targets": ["home"], "retention": 4, "encrypted": true },
+    { "id": "developer-before-build", "name": "Developer Pre-Build", "enabled": false, "schedule": "event:before-release-build", "targets": ["config", "pkg", "ui"], "retention": 3, "encrypted": false }
+  ],
+  "lastRuns": [
+    { "plan": "system-daily", "status": "ready", "createdAt": "2026-05-04T00:00:00.000Z", "sizeMb": 42 }
+  ]
+}

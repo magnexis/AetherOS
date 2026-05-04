@@ -1,0 +1,38 @@
+{
+  "schema": "aether.boot.targets.v1",
+  "defaultTarget": "graphical",
+  "targets": [
+    {
+      "id": "minimal",
+      "name": "Minimal",
+      "description": "Kernel, registry, and driver manager only.",
+      "services": ["init", "registry", "drivers", "eventbus"],
+      "drivers": ["aether-display", "aether-nvme", "aether-hid"],
+      "flags": ["quiet", "verify-drivers"]
+    },
+    {
+      "id": "graphical",
+      "name": "Graphical",
+      "description": "Full Aether shell with package daemon, Shield, and UI.",
+      "services": ["init", "registry", "drivers", "eventbus", "indexer", "pkgd", "recovery", "netd", "accountsd", "storaged", "auditd", "backupd", "policyd", "taskd", "crashd", "updated", "shield", "hardeningd", "ui", "shellexp", "ecosystemd"],
+      "drivers": ["aether-display", "aether-nvme", "aether-net", "aether-hid", "shield-filter"],
+      "flags": ["quiet", "splash", "restore-session", "verify-drivers"]
+    },
+    {
+      "id": "recovery",
+      "name": "Recovery",
+      "description": "Repair target for registry, driver, package, and shell recovery.",
+      "services": ["init", "registry", "drivers", "eventbus", "pkgd", "recovery", "storaged", "auditd", "backupd", "crashd"],
+      "drivers": ["aether-display", "aether-nvme", "aether-hid"],
+      "flags": ["safe-mode", "no-ui-restore", "verify-drivers", "repair-registry"]
+    },
+    {
+      "id": "diagnostic",
+      "name": "Diagnostic",
+      "description": "Verbose boot target for debugging services and device binding.",
+      "services": ["init", "registry", "drivers", "eventbus", "indexer", "pkgd", "recovery", "netd", "accountsd", "storaged", "auditd", "backupd", "policyd", "taskd", "crashd", "updated", "shield"],
+      "drivers": ["aether-display", "aether-nvme", "aether-net", "aether-hid", "shield-filter"],
+      "flags": ["verbose", "trace-services", "trace-drivers", "capture-replay"]
+    }
+  ]
+}

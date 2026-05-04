@@ -1,0 +1,17 @@
+{
+  "schema": "aether.accounts.v1",
+  "activeUser": "matth",
+  "users": [
+    { "id": "matth", "displayName": "Matth", "role": "admin", "avatar": "M", "auth": ["pin", "password"], "lastLogin": "2026-05-04T00:00:00.000Z", "home": "AetherFS:/Users/matth", "encrypted": true },
+    { "id": "guest", "displayName": "Guest", "role": "standard", "avatar": "G", "auth": ["temporary"], "lastLogin": "never", "home": "AetherFS:/Users/guest", "encrypted": false }
+  ],
+  "policies": {
+    "requirePinForAdmin": true,
+    "lockAfterMinutes": 15,
+    "allowGuest": true,
+    "elevatedActionsPrompt": "pin"
+  },
+  "sessions": [
+    { "id": "session-local-1", "user": "matth", "state": "active", "startedAt": "2026-05-04T00:00:00.000Z", "workspaces": 4 }
+  ]
+}

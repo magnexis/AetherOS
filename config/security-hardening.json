@@ -1,0 +1,57 @@
+{
+  "schema": "aether.security.hardening.v1",
+  "mode": "enforce-with-prompts",
+  "baseline": {
+    "name": "Aether Secure Desktop Baseline",
+    "version": "0.2.0",
+    "scoreTarget": 92,
+    "lastEvaluated": "never"
+  },
+  "controls": [
+    { "id": "least-privilege-apps", "name": "Least privilege app permissions", "domain": "runtime", "status": "enforced", "severity": "critical", "evidence": "Capability prompts required for filesystem, terminal, packages, services, network, settings, and shell extensions." },
+    { "id": "signed-store-artifacts", "name": "Signed Store artifacts", "domain": "ecosystem", "status": "warn", "severity": "high", "evidence": "Stable and beta channels require signatures; nightly is developer-mode-only." },
+    { "id": "restore-before-mutation", "name": "Restore point before privileged mutation", "domain": "recovery", "status": "enforced", "severity": "high", "evidence": "Packages, updates, and publishing flows require rollback metadata." },
+    { "id": "shell-extension-review", "name": "Shell extension review gate", "domain": "experience", "status": "enforced", "severity": "critical", "evidence": "Start, taskbar, file preview, settings, and search providers require review." },
+    { "id": "audit-admin-actions", "name": "Audit privileged actions", "domain": "audit", "status": "enforced", "severity": "critical", "evidence": "Admin, auth, policy, network, storage, backup, and ecosystem events flow through auditd/eventbus." },
+    { "id": "network-runtime-prompts", "name": "Runtime network prompts", "domain": "network", "status": "enforced", "severity": "high", "evidence": "Unsigned runtime apps are blocked and verified apps are prompted by profile." },
+    { "id": "quarantine-suspicious-files", "name": "Quarantine suspicious files", "domain": "shield", "status": "enforced", "severity": "high", "evidence": "Aether Shield scans hashes, suspicious names, and suspicious extensions." },
+    { "id": "driver-signature-policy", "name": "Driver signature policy", "domain": "drivers", "status": "enforced", "severity": "critical", "evidence": "Kernel drivers require signed state unless explicitly blocked in diagnostic mode." },
+    { "id": "secretless-publishing", "name": "Secretless publishing", "domain": "sdk", "status": "warn", "severity": "medium", "evidence": "Local publishing checklist requires README and manifest, but external signing secrets are future work." },
+    { "id": "session-lock-shortcuts", "name": "Session lock accelerators", "domain": "accounts", "status": "enforced", "severity": "medium", "evidence": "Ctrl+Alt+L and profile button route to lock session." }
+  ],
+  "threatModel": [
+    { "id": "malicious-extension", "risk": "A shell extension attempts to hijack Start, taskbar, search, or Settings.", "mitigation": "Extension points require capability tokens, review, and visible permission prompts." },
+    { "id": "package-supply-chain", "risk": "An app package attempts unsigned install or dependency confusion.", "mitigation": "Channels, dependency solving, signed placeholders, rollback plans, and Shield scan gates are modeled." },
+    { "id": "privilege-sprawl", "risk": "Apps request broad filesystem, terminal, services, or package authority.", "mitigation": "Object-capability policy and Permission Center make every grant auditable." },
+    { "id": "unsafe-driver", "risk": "A kernel driver is unsigned, blocked, or mismatched to hardware.", "mitigation": "Driver Manager v2, signature warnings, blocked driver list, and policy evaluation guard state." },
+    { "id": "persistence-abuse", "risk": "An app registers startup entries, tasks, or services without user visibility.", "mitigation": "Startup Apps, Task Scheduler, Service Manager, Event Viewer, and audit logs expose persistence points." }
+  ],
+  "runtimePolicy": {
+    "defaultDeny": true,
+    "promptOnFirstUse": true,
+    "denyDangerousBehaviors": true,
+    "requireMinimalCapabilities": true,
+    "allowTemporaryGrants": true,
+    "temporaryGrantMinutes": 30
+  },
+  "storePolicy": {
+    "stableRequiresSignature": true,
+    "betaRequiresSignature": true,
+    "nightlyRequiresDeveloperMode": true,
+    "featuredRequiresCertification": true,
+    "publishRequiresNoOverlapAudit": true,
+    "publishRequiresCrashBundleHook": true
+  },
+  "networkPolicy": {
+    "blockUnsignedRuntimeNetwork": true,
+    "secureDnsRequiredOnPublic": true,
+    "vpnProfilesRequirePrompt": true,
+    "firewallChangesRequireAudit": true
+  },
+  "scoreWeights": {
+    "critical": 16,
+    "high": 10,
+    "medium": 6,
+    "low": 3
+  }
+}

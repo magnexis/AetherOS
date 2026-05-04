@@ -1,0 +1,23 @@
+{
+  "schema": "aether.ui.shell.manifest.v1",
+  "name": "Aether Shell",
+  "kind": "graphical-shell",
+  "enabled": true,
+  "runtime": "tauri",
+  "frontend": {
+    "entry": "src/main.ts",
+    "styles": "src/styles.css",
+    "windowManager": "src/windows.ts",
+    "desktop": "src/desktop.ts"
+  },
+  "integrations": [
+    "kernel",
+    "services",
+    "drivers",
+    "pkg",
+    "security",
+    "logs",
+    "experience",
+    "ecosystem"
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "aether.pkg.registry.v1",
+  "repositories": [
+    { "name": "local", "url": "file://pkg/local", "channel": "stable", "trusted": true },
+    { "name": "aether-labs", "url": "https://registry.aether.local/stable", "channel": "stable", "trusted": false }
+  ],
+  "packages": [
+    { "name": "aether-terminal", "version": "1.1.0", "installed": true, "protected": true, "services": [], "drivers": [] },
+    { "name": "aether-files", "version": "1.1.0", "installed": true, "protected": true, "services": [], "drivers": [] },
+    { "name": "aether-settings", "version": "1.1.0", "installed": true, "protected": true, "services": ["registry"], "drivers": [] },
+    { "name": "aether-monitor", "version": "1.1.0", "installed": true, "protected": true, "services": [], "drivers": [] },
+    { "name": "aether-nexus", "version": "0.4.0", "installed": true, "protected": true, "services": ["registry", "drivers"], "drivers": [] },
+    { "name": "aether-recovery", "version": "0.1.0", "installed": true, "protected": true, "services": ["recovery"], "drivers": [] },
+    { "name": "aether-eventbus", "version": "0.1.0", "installed": true, "protected": true, "services": ["eventbus"], "drivers": [] },
+    { "name": "aether-indexer", "version": "0.1.0", "installed": true, "protected": true, "services": ["indexer"], "drivers": [] },
+    { "name": "aether-taskd", "version": "0.1.0", "installed": true, "protected": true, "services": ["taskd"], "drivers": [] },
+    { "name": "aether-crashd", "version": "0.1.0", "installed": true, "protected": true, "services": ["crashd"], "drivers": [] },
+    { "name": "aether-updated", "version": "0.1.0", "installed": true, "protected": true, "services": ["updated"], "drivers": [] },
+    { "name": "aether-network", "version": "0.1.0", "installed": true, "protected": true, "services": ["netd"], "drivers": ["aether-net"] },
+    { "name": "aether-accounts", "version": "0.1.0", "installed": true, "protected": true, "services": ["accountsd"], "drivers": [] },
+    { "name": "aether-storage", "version": "0.1.0", "installed": true, "protected": true, "services": ["storaged"], "drivers": ["aether-nvme"] },
+    { "name": "aether-audit", "version": "0.1.0", "installed": true, "protected": true, "services": ["auditd"], "drivers": [] },
+    { "name": "aether-backup", "version": "0.1.0", "installed": true, "protected": true, "services": ["backupd"], "drivers": ["aether-nvme"] },
+    { "name": "aether-policy", "version": "0.1.0", "installed": true, "protected": true, "services": ["policyd"], "drivers": [] },
+    { "name": "aether-experience", "version": "0.1.0", "installed": true, "protected": true, "services": ["shellexp"], "drivers": [] },
+    { "name": "aether-ecosystem", "version": "0.1.0", "installed": true, "protected": true, "services": ["ecosystemd"], "drivers": [] },
+    { "name": "aether-hardening", "version": "0.1.0", "installed": true, "protected": true, "services": ["hardeningd"], "drivers": [] },
+    { "name": "demo-app", "version": "0.4.2", "installed": false, "protected": false, "services": [], "drivers": [] }
+  ]
+}

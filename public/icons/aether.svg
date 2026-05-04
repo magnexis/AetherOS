@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AetherOS icon">
+  <defs>
+    <radialGradient id="aether-portal" cx="50%" cy="50%" r="62%">
+      <stop offset="0%" stop-color="#b8ff6a"/>
+      <stop offset="42%" stop-color="#45ffc6"/>
+      <stop offset="72%" stop-color="#7a5cff"/>
+      <stop offset="100%" stop-color="#c45cff"/>
+    </radialGradient>
+    <filter id="portal-glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="2.4" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.49 0 0 0 0 0.25 0 0 0 0 1 0 0 0 0.85 0"/>
+      <feBlend in="SourceGraphic" mode="screen"/>
+    </filter>
+    <clipPath id="aether-a-shape">
+      <path d="M32 9 54 51H44l-4-8H24l-4 8H10L32 9Zm-4 26h8l-4-9-4 9Z"/>
+    </clipPath>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="#07111f"/>
+  <path d="M32 9 54 51H44l-4-8H24l-4 8H10L32 9Zm-4 26h8l-4-9-4 9Z" fill="#6fd2ff"/>
+  <rect x="0" y="35" width="64" height="29" fill="#ffffff" clip-path="url(#aether-a-shape)"/>
+  <ellipse cx="32" cy="35" rx="8.8" ry="8.8" fill="url(#aether-portal)" filter="url(#portal-glow)"/>
+  <path d="M25.5 35c2.4-6.2 10.4-6.2 13 0-2.4 6.2-10.4 6.2-13 0Z" fill="none" stroke="#07111f" stroke-width="1.25" opacity="0.72"/>
+  <path d="M29 34.8c1.9-3 4.4-3 6.2 0-1.8 2.8-4.4 2.8-6.2 0Z" fill="none" stroke="#ffffff" stroke-width="0.9" opacity="0.62"/>
+</svg>

@@ -1,0 +1,42 @@
+{
+  "schema": "aether.policy.engine.v1",
+  "mode": "enforce",
+  "policies": [
+    {
+      "id": "admin-requires-pin",
+      "scope": "accounts",
+      "expression": "admin actions require pin",
+      "enabled": true,
+      "effect": "prompt"
+    },
+    {
+      "id": "public-network-lockdown",
+      "scope": "network",
+      "expression": "public profile blocks sharing",
+      "enabled": true,
+      "effect": "enforce"
+    },
+    {
+      "id": "unsigned-kernel-driver-block",
+      "scope": "drivers",
+      "expression": "unsigned kernel drivers cannot run",
+      "enabled": true,
+      "effect": "block"
+    },
+    {
+      "id": "backup-before-update",
+      "scope": "updates",
+      "expression": "create restore point before applying update",
+      "enabled": true,
+      "effect": "enforce"
+    },
+    {
+      "id": "storage-warning",
+      "scope": "storage",
+      "expression": "warn at 85 percent capacity",
+      "enabled": true,
+      "effect": "warn"
+    }
+  ],
+  "violations": []
+}

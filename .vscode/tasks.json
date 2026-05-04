@@ -1,0 +1,26 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "AetherOS: Check",
+      "type": "shell",
+      "command": "npm run check",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "AetherOS: Dev",
+      "type": "shell",
+      "command": "npm run tauri:dev",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "AetherOS: Build",
+      "type": "shell",
+      "command": "npm run tauri:build",
+      "group": "build",
+      "problemMatcher": []
+    }
+  ]
+}

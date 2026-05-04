@@ -1,0 +1,9 @@
+{
+  "schema": "aether.startup.apps.v1",
+  "entries": [
+    { "id": "aether-shield", "name": "Aether Shield", "app": "security", "enabled": true, "delaySeconds": 0, "impact": "medium", "capability": "filesystem.scan" },
+    { "id": "aether-indexer", "name": "Aether Search Indexer", "app": "search", "enabled": true, "delaySeconds": 8, "impact": "low", "capability": "filesystem.read" },
+    { "id": "aether-package-daemon", "name": "Package Registry Daemon", "app": "packages", "enabled": true, "delaySeconds": 2, "impact": "medium", "capability": "packages.manage" },
+    { "id": "aether-assistant", "name": "Aether Assistant", "app": "assistant", "enabled": false, "delaySeconds": 12, "impact": "low", "capability": "notifications" }
+  ]
+}

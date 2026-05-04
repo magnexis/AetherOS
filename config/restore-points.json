@@ -1,0 +1,21 @@
+{
+  "schema": "aether.restore.points.v1",
+  "restoreDirectory": "system/restore-points",
+  "points": [
+    {
+      "id": "last-known-good",
+      "name": "Last Known Good Configuration",
+      "description": "Stable graphical target with recovery supervisor healthy.",
+      "author": "system",
+      "reason": "post-validation",
+      "createdAt": "2026-05-04T00:00:00.000Z",
+      "snapshot": "",
+      "checksum": "sha256:pending-runtime-snapshot",
+      "preview": [
+        "graphical boot target",
+        "all required drivers running",
+        "protected packages installed"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "aether.recovery.policy.v1",
+  "activePolicy": "standard-auto-repair",
+  "snapshotDirectory": "system/recovery-snapshots",
+  "maxSnapshots": 5,
+  "checks": [
+    { "id": "boot-target-valid", "severity": "critical", "scope": "config", "repair": "select-safe-target" },
+    { "id": "required-drivers-running", "severity": "critical", "scope": "drivers", "repair": "restart-required-driver" },
+    { "id": "enabled-services-healthy", "severity": "warning", "scope": "services", "repair": "restart-enabled-service" },
+    { "id": "protected-packages-installed", "severity": "critical", "scope": "pkg", "repair": "restore-protected-package" },
+    { "id": "unsigned-kernel-drivers-blocked", "severity": "critical", "scope": "drivers", "repair": "stop-unsigned-driver" },
+    { "id": "ui-entry-present", "severity": "warning", "scope": "ui", "repair": "fallback-to-recovery-target" }
+  ],
+  "repairs": {
+    "createSnapshotBeforeRepair": true,
+    "restartFaultedServices": true,
+    "restoreRequiredDrivers": true,
+    "protectCorePackages": true,
+    "stopUnsignedKernelDrivers": true,
+    "applySafeModeOnCriticalFailure": false
+  }
+}

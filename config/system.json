@@ -1,0 +1,44 @@
+{
+  "schema": "aether.system.config.v1",
+  "hostname": "aether-local",
+  "profile": "balanced",
+  "boot": {
+    "defaultTarget": "graphical",
+    "flags": ["quiet", "splash", "restore-session", "verify-drivers"],
+    "safeModeTarget": "recovery",
+    "panicPolicy": "capture-replay-and-restart-shell"
+  },
+  "paths": {
+    "kernel": "kernel/kernel.manifest.json",
+    "bootTargets": "config/boot-targets.json",
+    "recoveryPolicy": "config/recovery-policy.json",
+    "eventBus": "config/event-bus.json",
+    "registryHives": "config/registry-hives.json",
+    "restorePoints": "config/restore-points.json",
+    "startupApps": "config/startup-apps.json",
+    "taskScheduler": "config/task-scheduler.json",
+    "crashReporter": "config/crash-reporter.json",
+    "updates": "config/updates.json",
+    "network": "config/network.json",
+    "accounts": "config/accounts.json",
+    "storage": "config/storage.json",
+    "audit": "config/audit.json",
+    "backup": "config/backup.json",
+    "policyEngine": "config/policy-engine.json",
+    "experience": "config/experience.json",
+    "ecosystem": "config/ecosystem.json",
+    "securityHardening": "config/security-hardening.json",
+    "services": "services/services.manifest.json",
+    "drivers": "drivers/drivers.manifest.json",
+    "packages": "pkg/registry.json",
+    "dependencyLock": "pkg/dependency-lock.json",
+    "security": "security/policy.json",
+    "ui": "ui/shell.manifest.json",
+    "logs": "logs/system-events.jsonl"
+  },
+  "ui": {
+    "enabled": true,
+    "shell": "tauri",
+    "entry": "src/main.ts"
+  }
+}

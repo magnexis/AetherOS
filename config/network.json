@@ -1,0 +1,24 @@
+{
+  "schema": "aether.network.v1",
+  "activeProfile": "home",
+  "interfaces": [
+    { "id": "eth0", "name": "AetherNet 2.5G", "type": "ethernet", "state": "connected", "address": "192.168.1.42", "gateway": "192.168.1.1", "dns": ["1.1.1.1", "8.8.8.8"], "metered": false },
+    { "id": "wlan0", "name": "Aether Wi-Fi", "type": "wifi", "state": "available", "address": "", "gateway": "", "dns": [], "metered": false },
+    { "id": "vpn0", "name": "Aether Secure Tunnel", "type": "vpn", "state": "disconnected", "address": "", "gateway": "", "dns": [], "metered": true }
+  ],
+  "profiles": [
+    { "id": "home", "name": "Home", "firewall": "trusted-lan", "discovery": true, "sharing": true },
+    { "id": "work", "name": "Work", "firewall": "managed", "discovery": true, "sharing": false },
+    { "id": "public", "name": "Public", "firewall": "locked-down", "discovery": false, "sharing": false }
+  ],
+  "firewallRules": [
+    { "id": "allow-shell-updates", "name": "Allow Update Engine", "direction": "outbound", "app": "aether-updated", "port": 443, "protocol": "tcp", "action": "allow", "enabled": true },
+    { "id": "allow-marketplace", "name": "Allow Marketplace", "direction": "outbound", "app": "aether-marketplace", "port": 443, "protocol": "tcp", "action": "allow", "enabled": true },
+    { "id": "block-unsigned-runtime", "name": "Block Unsigned Runtime Apps", "direction": "outbound", "app": "unsigned", "port": 0, "protocol": "any", "action": "block", "enabled": true }
+  ],
+  "dnsPolicy": {
+    "secureDns": true,
+    "fallbackAllowed": true,
+    "blockPlaintextOnPublic": true
+  }
+}

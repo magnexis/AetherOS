@@ -1,0 +1,17 @@
+{
+  "schema": "aether.pkg.dependency-lock.v1",
+  "locks": [
+    { "package": "aether-nexus", "version": "0.4.0", "dependencies": ["aether-terminal >= 1.1.0", "aether-settings >= 1.1.0"], "requiredServices": ["registry", "drivers"], "requiredDrivers": [], "conflicts": [], "locked": true },
+    { "package": "aether-recovery", "version": "0.1.0", "dependencies": ["aether-settings >= 1.1.0"], "requiredServices": ["recovery"], "requiredDrivers": ["aether-nvme"], "conflicts": [], "locked": true },
+    { "package": "aether-experience", "version": "0.1.0", "dependencies": ["aether-settings >= 1.1.0"], "requiredServices": ["shellexp", "ui"], "requiredDrivers": [], "conflicts": [], "locked": true },
+    { "package": "aether-ecosystem", "version": "0.1.0", "dependencies": ["aether-settings >= 1.1.0", "aether-policy >= 0.1.0"], "requiredServices": ["ecosystemd", "pkgd", "policyd"], "requiredDrivers": [], "conflicts": [], "locked": true },
+    { "package": "aether-hardening", "version": "0.1.0", "dependencies": ["aether-policy >= 0.1.0", "aether-audit >= 0.1.0"], "requiredServices": ["hardeningd", "policyd", "auditd", "shield"], "requiredDrivers": [], "conflicts": [], "locked": true },
+    { "package": "demo-app", "version": "0.4.2", "dependencies": ["aether-terminal >= 1.1.0"], "requiredServices": [], "requiredDrivers": [], "conflicts": ["demo-app-legacy"], "locked": false }
+  ],
+  "solver": {
+    "strategy": "prefer-installed-stable",
+    "allowDowngrade": false,
+    "rollbackOnFailure": true,
+    "verifySignatures": true
+  }
+}

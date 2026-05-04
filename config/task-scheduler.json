@@ -1,0 +1,9 @@
+{
+  "schema": "aether.tasks.v1",
+  "tasks": [
+    { "id": "scan-downloads", "name": "Scan Downloads", "trigger": "login", "enabled": true, "runAs": "shield", "capability": "filesystem.scan", "action": "scan Downloads", "lastRun": "never" },
+    { "id": "package-refresh", "name": "Refresh Package Registry", "trigger": "interval:6h", "enabled": true, "runAs": "pkgd", "capability": "packages.manage", "action": "pkg refresh", "lastRun": "never" },
+    { "id": "restore-point-nightly", "name": "Nightly Restore Point", "trigger": "idle", "enabled": true, "runAs": "recovery", "capability": "recovery.snapshot", "action": "recovery snapshot nightly", "lastRun": "never" },
+    { "id": "crash-bundle-on-fault", "name": "Crash Bundle on Service Fault", "trigger": "event:service.faulted", "enabled": true, "runAs": "crashd", "capability": "crash.bundle", "action": "crash bundle service", "lastRun": "never" }
+  ]
+}

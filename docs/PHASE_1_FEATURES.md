@@ -1,0 +1,599 @@
+# Phase 1 Features
+
+- Custom desktop shell UI
+- Full-screen wallpaper/background
+- Top status bar
+- Bottom dock/taskbar
+- Live clock
+- Network indicator action
+- Battery/power indicator action
+- User profile action
+- Notification action
+- App launcher button
+- Searchable app launcher
+- Internal window manager
+- Open app windows
+- Close app windows
+- Minimize app windows
+- Maximize app windows
+- Drag app windows
+- Bring app windows to front
+- Active window highlighting
+- File Explorer app
+- File Explorer sidebar folders: Home, Desktop, Documents, Downloads, Pictures, System, Applications
+- File Explorer breadcrumb path
+- File Explorer search
+- File Explorer file/folder icons
+- File Explorer visible actions: New Folder, Duplicate, Delete
+- Terminal app
+- Terminal prompt line
+- Terminal command history
+- Terminal scrollable output
+- Terminal blinking cursor
+- Terminal command: `help`
+- Terminal command: `clear`
+- Terminal command: `apps`
+- Terminal command: `status`
+- Terminal command: `version`
+- Terminal command: `install demo-app`
+- Terminal command: `remove demo-app`
+- Terminal command: `theme dark`
+- Terminal command: `theme light`
+- Settings app
+- Settings sections: Appearance, Performance, Security, Updates, Developer, About
+- Settings toggle: dark/light mode
+- Settings toggle: animations on/off
+- Settings toggle: compact dock on/off
+- Settings toggle: developer mode on/off
+- Settings control: Balanced, Gaming, Battery Saver performance profile
+- System Monitor app
+- Animated CPU metric
+- Animated RAM metric
+- Animated Disk metric
+- Simulated GPU metric
+- Running apps list
+- Uptime display
+- Active windows display
+- Package Manager app
+- Installed packages list
+- Available packages list
+- Install button
+- Remove button
+- Update button
+- Package details panel
+- Simulated packages: aether-terminal, aether-files, aether-settings, aether-monitor, demo-app
+- Package state shared between AetherPkg and Terminal
+- Command palette opened with Ctrl+K
+- Command palette search
+- Command palette commands: Open Terminal, Open Settings, Open File Explorer, Open System Monitor, Open Package Manager, Toggle Theme, Show About
+- Rust command: `get_system_info`
+- Rust command: `list_processes`
+- Rust command: `get_os_version`
+- Rust command: `echo_command`
+- Project documentation
+
+# Phase 2 Upgrade Features
+
+- Persistent settings saved through the Tauri backend
+- Persistent installed package state saved to a local JSON registry
+- Persistent notification history
+- Persistent session lock/login state
+- Persistent window layout snapshots
+- Rust-backed known folders
+- Rust-backed real directory listing
+- Rust-backed file open requests
+- Rust-backed create folder
+- Rust-backed create file
+- Rust-backed rename
+- Rust-backed delete
+- Rust-backed copy
+- Rust-backed live CPU, RAM, disk, uptime, OS, and kernel metrics
+- Rust-backed process list with memory and CPU usage
+- Terminal command: `ls`
+- Terminal command: `pwd`
+- Terminal command: `cd`
+- Terminal command: `mkdir`
+- Terminal command: `touch`
+- Terminal command: `rm`
+- Terminal command: `sysinfo`
+- Terminal command: `processes`
+- JSON package registry model
+- Lock screen
+- Local user profile state
+- Session restore
+- Notification center
+- Global command palette entries for developer console, lock session, and packages
+- Window resizing
+- Window edge snapping
+- Alt+Tab focus switching
+- Developer Console app
+- Shell event log
+- Backend diagnostic command runner
+- Package registry diagnostics
+- Window layout diagnostics
+
+# Phase 3 Platform Upgrade Features
+
+- Real App Runtime foundation
+- `aether.app.json` manifest preview
+- App permissions list and grant flow
+- Install/uninstall lifecycle for third-party apps
+- Sandboxed runtime app windows
+- Runtime app notification API bridge
+- Local app store/registry
+- Advanced File Manager tabs
+- Advanced File Manager split view
+- File preview metadata panel
+- Drag/drop import queue
+- Copy/move queue
+- Trash/recycle bin model
+- Permissions view
+- Recent files
+- Indexed search language
+- File associations
+- Service Manager app
+- Start/stop/restart services
+- Boot services
+- Service logs
+- Health status
+- Crash/restart policy
+- Service permissions
+- Developer-created services
+- Package channels: stable, beta, nightly
+- Signed package verification UI
+- Dependency display
+- Update history
+- Package rollback actions
+- Process kill command bridge
+- Suspend/restart/resource-limit request flows
+- Startup apps view
+- Security warning surfaces
+- Virtual workspaces
+- Window tiling
+- Keyboard workspace switching
+- Persistent workspace layouts
+- Identity model with multiple users
+- PIN/auth state
+- App capability grants
+- Encrypted user data indicators
+- Lock screen widgets
+- Admin/elevated action approvals
+- Built-in Aether Shield virus protection
+- Threat scan, allow, and quarantine flows
+- System Search app
+- Search index for files, apps, settings, commands, packages, services, and updates
+- Aether SDK app
+- TypeScript SDK examples
+- Rust command bridge template
+- App scaffolder flow
+- App packaging CLI flow
+- Example app manifests
+- Update Center app
+- Release channels
+- Update changelog
+- Download/apply/rollback flow
+- Recovery mode
+
+# Phase 4 Depth Features
+
+- Native App Runtime v2 foundation
+- App install folder format under Aether app data
+- Real `aether.app.json` manifest loading from disk
+- Tauri multi-webview app launch hook
+- Runtime permission prompts
+- App-to-shell notification API bridge
+- Runtime crash handling messages
+- Rust SQLite search database
+- Background-style filesystem indexing command
+- File metadata cache
+- Recent/opened file history in File Explorer
+- Search from command palette through System Search
+- Real Aether Trash folder
+- Restore from trash
+- Permanent delete
+- Copy/move queue progress model
+- Cancel/retry/conflict-ready queue UI model
+- Settings System Storage section
+- Settings Privacy section
+- Storage path display
+- Clear cache action
+- Reset shell action
+- Export/import settings state
+- Permission audit surface
+- App data management surface
+- Native Web Notification bridge
+- Notification permissions
+- Do-not-disturb setting
+- App-specific notification control surface
+- Local `.aetherpkg` file install action
+- Package manifest validation
+- Package dependency validation messaging
+- Signature placeholder verification
+- Rollback snapshot messaging
+- Workspace Overview/Mission Control screen
+- All windows across workspaces
+- Move windows between workspaces
+- Workspace templates
+- Boot splash screen
+- Service startup sequence
+- Login handoff after boot
+- Startup app restore
+- Boot logs in Developer Console
+- Aether Shield SHA-256 hash scanner
+- Suspicious extension/name rules
+- Quarantine folder
+- Scan history
+- Realtime watch mode placeholder
+- Keyboard focus states
+- More consistent platform app panels
+- Empty/loading/error state copy
+- Small-window responsive polish
+
+# Phase 5 Desktop Maturity Features
+
+- Start Menu 2.0
+- Windows-style pinned apps
+- Recent files in Start
+- Recommended actions in Start
+- Search built into launcher
+- Power menu actions: sleep shell, restart shell, lock, shutdown mock
+- Taskbar 2.0
+- Window previews on taskbar hover
+- Right-click taskbar app menus
+- Pin/unpin taskbar action messaging
+- Running app badges
+- Per-workspace taskbar running indicators
+- Real desktop context menu
+- Desktop context action: New folder
+- Desktop context action: New file
+- Desktop context action: Change wallpaper
+- Desktop context action: Display settings
+- Desktop context action: Sort icons
+- Desktop context action: Refresh shell
+- Aether Control Panel app
+- Device manager surface
+- Services shortcut
+- Firewall policy selector
+- Environment variables panel
+- Startup apps toggles
+- Recovery tools
+- Safe Mode mock action
+- Boot logs view
+- Real User Profile surfaces
+- Multiple local users in Settings
+- Avatar selection controls
+- PIN/password state language
+- User-specific settings and app-data model language
+- File Explorer address bar typing
+- File Explorer back navigation
+- File Explorer forward navigation
+- File properties action
+- Open-with action
+- Batch operation queue action
+- Snap preview while dragging windows
+- Taskbar thumbnail preview cards
+- Saved snapped layout through existing window persistence
+- Aether Marketplace featured apps
+- Aether Marketplace app screenshots
+- Aether Marketplace reviews
+- Aether Marketplace category filters
+- Aether Marketplace update/install history language
+- Local developer publishing flow language
+- System tray
+- Background service tray icons
+- Audio controls
+- Network controls
+- Power controls
+- Hidden tray menu
+- Audio and Display settings surface
+- Volume mixer slider
+- Brightness slider
+- Display scaling selector
+- Multi-monitor layout mock
+- Refresh rate display
+- Aether Assistant app
+- Assistant command: Open files from yesterday
+- Assistant command: Install demo-app
+- Assistant command: Switch to gaming mode
+- Assistant command: Open security warnings
+- Assistant command: Show startup apps
+- Assistant command: Repair package registry
+- Recovery and Safe Mode controls
+- Reset/refresh shell action
+- Disable startup apps language
+- Repair package registry action
+- Boot logs action
+- Restore previous session through existing persistence model
+
+# Phase 6 Kernel Research Features
+
+- Aether Kernel Lab app
+- Root kernel model in `src/kernelCore.ts`
+- Persistent root kernel state through local shell storage
+- Kernel registry hives: AETHER, HKLM, HKCU
+- Kernel registry transaction action
+- Driver configuration table
+- Driver start/stop actions
+- Device tree model
+- Device tree rescan action
+- Kernel module table
+- Kernel module load/unload actions
+- Syscall table model
+- Interrupt and timer vector model
+- Interrupt audit action
+- Boot flags editor
+- Panic policy selector
+- Boot configuration staging action
+- Power manager model
+- Power state cycle action
+- Protection-ring view model
+- Protection-ring rotation action
+- Round Robin scheduler model
+- Priority-based Multilevel Feedback Queue model
+- CFS-style virtual runtime scheduler model
+- Red-Black-Tree-inspired sorted virtual runtime view
+- AI-augmented scheduler behavior tuning for CPU, I/O, and GPU-heavy workloads
+- Unity/game workload scheduling language
+- eBPF-style register VM concept
+- Safe bytecode verifier output
+- Filesystem filter and network packet inspection examples
+- Higher-level C#-like kernel extension language direction
+- ZRAM-style memory compression model
+- Memory pressure metric
+- Cold LRU page compression action
+- Compressed page counter
+- Virtual Filesystem layer model
+- Everything-as-a-file architecture language
+- Native versioned filesystem concept
+- File write revision counter
+- Namespace and isolation model
+- PID sandbox profile
+- Game container profile with GPU grant and filesystem restriction
+- Build container and network isolation profiles
+- OSDev Wiki resource section
+- Bare Bones and Meaty Skeleton references
+- Aether From Scratch userspace/kernel contract track
+- Object-capability security model
+- Cryptographically unforgeable token language
+- `request_access(parent_token, "config")` syscall model
+- Confused Deputy prevention language
+- Zero-copy microkernel IPC model
+- User-mode keyboard driver example
+- Shared-memory circular buffer model
+- Copied-byte counter showing zero-copy behavior
+- Reactive kernel stream model
+- Observable-style file and interrupt subscription language
+- Kernel event loop callback model
+- Hot-swappable kernel component model
+- Live scheduler.sys replacement flow
+- Thread pause, state migration, component load, and resume model
+- Hardware-accelerated kernel logic model
+- GPU compute accelerator option
+- FPGA queue accelerator option
+- Filesystem encryption block counter
+- Kernel compression offload language
+- Single Address Space OS model
+- 64-bit shared address-space map
+- Protection Domain access model
+- Shared pointer handoff counter
+- Transparent compatibility hypervisor model
+- Windows shim VM compatibility container language
+- Hardware profile mediation language
+- Safety boundary against stealth bypassing
+- Formal verification micro-core panel
+- Lock-ordering proof language
+- Allocator invariant proof language
+- Capability monotonicity proof language
+- Semantic filesystem graph query panel
+- Database-as-OS query example
+- Unity asset relationship results
+- Deterministic record/replay panel
+- Interrupt/thread-switch/clock-read ring buffer language
+- Replayable crash stream timeline
+- Time-travel debugging rewind action
+
+# Phase 7 Nexus Command Center Features
+
+- Aether Nexus app
+- Desktop Nexus icon
+- Launcher Nexus tile
+- Start Menu recommended Nexus action
+- Command palette command: Open Aether Nexus
+- System Search entry for Aether Nexus
+- Terminal command: `nexus`
+- Keyboard shortcut: Ctrl+Shift+X
+- Settings shortcut listing for Ctrl+Shift+X
+- Settings System card for Aether Nexus
+- Live system graph panel
+- Graph pulse action
+- Shell/app/service/package/security/kernel/search graph nodes
+- Workspace choreography modes
+- Game Dev Hyperflow mode
+- Secure Ops mode
+- Creator Studio mode
+- Recovery Tunnel mode
+- Mode launch action that opens coordinated app stacks
+- Mode launch action that updates performance profile
+- Automation rules panel
+- Thermal Guard automation
+- Package Scan Chain automation
+- Focus Restore automation
+- Crash Replay Capture automation
+- Automation run counter
+- Automation actions that open apps, tile windows, and update settings
+- Self-healing diagnostics panel
+- Shell drift check
+- Package registry check
+- Service mesh check
+- Replay buffer check
+- Self-Heal action
+- Diagnostics export action
+- Time Ribbon panel
+- Selectable boot/session/kernel/marketplace/Nexus events
+- Advance Ribbon action
+- Command Mesh panel
+- Ops Stack launcher
+- Build Stack launcher
+- Recovery Stack launcher
+- Core Research launcher
+- Nexus event log
+- Responsive Nexus layout for small windows
+
+# Phase 10 System Operations Features
+
+- Control Panel integration for boot, recovery, services, drivers, packages, permissions, startup, tasks, events, crashes, and updates
+- Boot Manager app
+- Normal boot, recovery boot, diagnostic boot, safe mode, and last known good configuration surfaces
+- Aether Registry app
+- Kernel, service, driver, package, security, shell, task, and startup hive model
+- Device Manager app
+- Driver profiles, version history, rollback, hardware matching, blocked driver list, and signature warnings
+- Permission Prompt Center app
+- Startup apps manifest
+- Aether Task Scheduler app
+- Login, interval, event, idle, and capability-token task model
+- Crash Reporter app
+- Crash bundle policy and CLI bundle creation
+- System Event Bus manifest
+- Event Viewer app
+- Service event, package event, file operation event, recovery event, scan event, notification event, and update event topics
+- Per-daemon structured service logs
+- Recovery snapshot restore command
+- Named restore point metadata
+- Package dependency lockfile
+- Package dependency solve command
+- Update Engine manifest with signed update placeholders, staging, rollback points, release channels, and restart-required state
+
+# Phase 11 Administration Plane Features
+
+- Network administration manifest
+- Network Center app
+- Network profiles
+- DNS configuration model
+- Firewall rule model
+- VPN profile state
+- Network interface health model
+- Account administration manifest
+- Account Manager app
+- Multiple local account records
+- Group membership model
+- Authentication policy model
+- Credential provider model
+- Session policy model
+- Storage administration manifest
+- Storage Manager app
+- Volume and mount model
+- Storage quota model
+- Cleanup job model
+- Cache policy model
+- App-data ownership model
+- Audit administration manifest
+- Audit Viewer app
+- Audit categories
+- Audit retention policy
+- Audit export policy
+- Structured audit log flow
+- Backup administration manifest
+- Backup Manager app
+- Backup plan model
+- Backup target model
+- Backup retention model
+- Restore validation model
+- Backup last-run metadata
+- Policy engine manifest
+- Policy Center app
+- Policy rule scopes
+- Policy effects
+- Enforcement mode
+- Policy violation evaluation
+- Protected services: netd, accountsd, storaged, auditd, backupd, policyd
+- Protected packages for network, accounts, storage, audit, backup, and policy
+- Security actions for network, firewall, accounts, storage, audit, backup, and policy
+- Capability tokens for administrative services
+- CLI command: `network status`
+- CLI command: `network firewall`
+- CLI command: `accounts`
+- CLI command: `storage`
+- CLI command: `audit`
+- CLI command: `backup plans`
+- CLI command: `policy`
+- Control Panel integration for administration apps
+- Doctor validation for administration manifests
+
+# Phase 12 Windows-Plus Ecosystem Features
+
+- Windows-familiar Aether experience manifest
+- Start Menu policy model
+- Taskbar zone model
+- Widget model
+- Snap layout model
+- Quick settings model
+- Registered command and hotkey model
+- Default app association model
+- Experience Center app
+- Ctrl+Shift+E shortcut for Experience Center
+- Aether ecosystem manifest
+- Store channel model: stable, beta, nightly
+- Verified app catalog model
+- Review policy model
+- Extension point model
+- Protocol model: `aether://`, `aetherpkg://`, `aether-dev://`
+- Developer publishing checklist
+- Ecosystem Hub app
+- Ctrl+Shift+H shortcut for Ecosystem Hub
+- Protected package: `aether-experience`
+- Protected package: `aether-ecosystem`
+- Service: `aether-experienced`
+- Service: `aether-ecosystemd`
+- Event topic: `experience`
+- Event topic: `ecosystem`
+- Security action: `shell.manage`
+- Security action: `shell.extend`
+- Security action: `settings.extend`
+- Security action: `search.index`
+- Security action: `ecosystem.manage`
+- CLI command: `experience`
+- CLI command: `experience commands`
+- CLI command: `experience defaults`
+- CLI command: `experience snap`
+- CLI command: `ecosystem`
+- CLI command: `ecosystem apps`
+- CLI command: `ecosystem extensions`
+- CLI command: `ecosystem protocols`
+- CLI command: `ecosystem publish`
+- Desktop icons for Experience Center and Ecosystem Hub
+- Start Menu recommended actions for Experience Center and Ecosystem Hub
+- Command palette entries for Experience Center and Ecosystem Hub
+- Terminal commands for Experience Center and Ecosystem Hub
+- Settings app integration
+- Control Panel integration
+- System Search integration
+- Doctor validation for shell experience and ecosystem manifests
+
+# Phase 13 Security, Privacy, and Licensing Features
+
+- Apache-2.0 license
+- Root NOTICE file
+- Root privacy policy
+- Package metadata license set to Apache-2.0
+- Security hardening manifest
+- Security hardening baseline model
+- Security hardening controls
+- Security hardening threat model
+- Runtime default-deny policy
+- Store signature policy
+- Network runtime prompt policy
+- Protected service: `aether-hardeningd`
+- Protected package: `aether-hardening`
+- Event topic: `hardening`
+- Security action: `hardening.evaluate`
+- Capability token for hardening evaluation
+- CLI command: `hardening`
+- CLI command: `hardening controls`
+- CLI command: `hardening threats`
+- CLI command: `hardening policy`
+- Security Center hardening baseline panel
+- Security Center hardening evaluate action
+- Security Center hardening export action
+- Doctor validation for hardening controls
+- Dependency update clearing reported moderate Vite/esbuild audit advisories

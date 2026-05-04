@@ -1,0 +1,3 @@
+927bd1ee672dbb3a4b64830d9d8bfc1ac71d4e9ac3e3e749c8c6b616a5b24ed9  AetherOS-1.1.2-windows-x64-portable.exe
+9316d91526e5ec2a8630b545efe641beaea0427395aa63f9d608a7c73160a359  AetherOS-1.1.2-windows-x64-setup.exe
+34b6a4f28c3f78419f26e1481cb77784fc157055a2ef0476d3bfdd2287a8d269  AetherOS-1.1.2-windows-x64.msi

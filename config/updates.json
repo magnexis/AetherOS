@@ -1,0 +1,19 @@
+{
+  "schema": "aether.update.engine.v1",
+  "activeChannel": "stable",
+  "restartRequired": false,
+  "channels": [
+    { "id": "stable", "url": "https://updates.aether.local/stable", "trusted": true },
+    { "id": "beta", "url": "https://updates.aether.local/beta", "trusted": false },
+    { "id": "nightly", "url": "https://updates.aether.local/nightly", "trusted": false }
+  ],
+  "manifests": [
+    { "version": "0.1.1", "channel": "stable", "signature": "ed25519:placeholder", "status": "available", "requiresRestart": true, "rollbackPoint": "last-known-good" },
+    { "version": "0.2.0-beta", "channel": "beta", "signature": "ed25519:placeholder", "status": "staged", "requiresRestart": true, "rollbackPoint": "last-known-good" }
+  ],
+  "staging": {
+    "path": "system/update-staging",
+    "verification": "signature-placeholder-plus-checksum",
+    "rollbackStrategy": "restore-point-before-apply"
+  }
+}

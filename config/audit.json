@@ -1,0 +1,18 @@
+{
+  "schema": "aether.audit.v1",
+  "streamPath": "logs/audit/audit.jsonl",
+  "retentionDays": 30,
+  "categories": [
+    { "id": "auth", "enabled": true, "severity": "audit" },
+    { "id": "admin", "enabled": true, "severity": "audit" },
+    { "id": "network", "enabled": true, "severity": "info" },
+    { "id": "storage", "enabled": true, "severity": "info" },
+    { "id": "policy", "enabled": true, "severity": "warning" },
+    { "id": "backup", "enabled": true, "severity": "info" }
+  ],
+  "exportPolicy": {
+    "redactUserNames": false,
+    "requiresAdmin": true,
+    "format": "jsonl"
+  }
+}

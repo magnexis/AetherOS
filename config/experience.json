@@ -1,0 +1,61 @@
+{
+  "schema": "aether.experience.v1",
+  "mode": "windows-familiar-aether-advanced",
+  "startMenu": {
+    "layout": "pinned-recommended-search-power",
+    "searchProvider": "aether-indexd",
+    "pinnedApps": ["files", "settings", "terminal", "marketplace", "search", "monitor", "security", "nexus"],
+    "recommendedSources": ["recent-files", "installed-apps", "system-health", "workflows", "store-featured"],
+    "powerActions": ["sleep", "restart-shell", "lock", "shutdown-mock", "advanced-startup"]
+  },
+  "taskbar": {
+    "alignment": "center",
+    "badges": true,
+    "previewCards": true,
+    "jumpLists": true,
+    "workspaceFiltering": true,
+    "zones": [
+      { "id": "launcher", "name": "Start", "locked": true },
+      { "id": "pinned", "name": "Pinned apps", "locked": false },
+      { "id": "running", "name": "Running windows", "locked": false },
+      { "id": "tray", "name": "System tray", "locked": true }
+    ]
+  },
+  "widgets": [
+    { "id": "system-health", "name": "System Health", "enabled": true, "source": "monitor" },
+    { "id": "store-featured", "name": "Featured Apps", "enabled": true, "source": "ecosystem" },
+    { "id": "calendar", "name": "Today", "enabled": true, "source": "accounts" },
+    { "id": "security", "name": "Aether Shield", "enabled": true, "source": "security" }
+  ],
+  "snapLayouts": [
+    { "id": "halves", "name": "Side by side", "slots": ["left-half", "right-half"] },
+    { "id": "main-sidebar", "name": "Main and sidebar", "slots": ["main-wide", "side-narrow"] },
+    { "id": "quad", "name": "Four corners", "slots": ["top-left", "top-right", "bottom-left", "bottom-right"] },
+    { "id": "creator", "name": "Creator stack", "slots": ["preview", "timeline", "tools"] }
+  ],
+  "quickSettings": [
+    { "id": "network", "target": "network", "label": "Network" },
+    { "id": "audio", "target": "settings", "label": "Audio" },
+    { "id": "battery", "target": "settings", "label": "Power" },
+    { "id": "shield", "target": "security", "label": "Shield" },
+    { "id": "focus", "target": "nexus", "label": "Focus" },
+    { "id": "updates", "target": "updates", "label": "Updates" }
+  ],
+  "registeredCommands": [
+    { "keys": "Ctrl+K", "command": "palette.open", "target": "command-palette" },
+    { "keys": "Ctrl+Space", "command": "start.open", "target": "launcher" },
+    { "keys": "Ctrl+,", "command": "settings.open", "target": "settings" },
+    { "keys": "Ctrl+Shift+E", "command": "experience.open", "target": "experience" },
+    { "keys": "Ctrl+Shift+H", "command": "ecosystem.open", "target": "ecosystem" },
+    { "keys": "Ctrl+Shift+M", "command": "marketplace.open", "target": "marketplace" },
+    { "keys": "Ctrl+Alt+L", "command": "session.lock", "target": "lock" },
+    { "keys": "Alt+Tab", "command": "windows.focus-next", "target": "window-manager" }
+  ],
+  "defaultApps": [
+    { "type": "folder", "handler": "files" },
+    { "type": "text/plain", "handler": "nebula-code" },
+    { "type": "image/png", "handler": "aether-viewer" },
+    { "type": "application/aetherpkg", "handler": "marketplace" },
+    { "type": "terminal-command", "handler": "terminal" }
+  ]
+}

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="760" viewBox="0 0 1280 760" role="img" aria-labelledby="title desc">
+  <title id="title">AetherOS desktop shell preview</title>
+  <desc id="desc">A dark operating-system-style desktop shell with status bar, dock, launcher, windows, and system widgets.</desc>
+  <defs>
+    <linearGradient id="wallpaper" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#08111f"/>
+      <stop offset="0.48" stop-color="#0d1628"/>
+      <stop offset="1" stop-color="#141026"/>
+    </linearGradient>
+    <linearGradient id="portal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#41f6b7"/>
+      <stop offset="0.52" stop-color="#4f8cff"/>
+      <stop offset="1" stop-color="#9b5cff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000814" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+  <rect width="1280" height="760" fill="url(#wallpaper)"/>
+  <circle cx="1030" cy="110" r="230" fill="#1e2e58" opacity="0.24"/>
+  <circle cx="280" cy="560" r="270" fill="#342062" opacity="0.2"/>
+
+  <rect x="0" y="0" width="1280" height="46" fill="#080d17"/>
+  <text x="26" y="29" fill="#eaf0ff" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700">AetherOS</text>
+  <text x="545" y="29" fill="#9fb0cc" font-family="Segoe UI, Arial, sans-serif" font-size="14">Workspace 1 - Development</text>
+  <text x="1052" y="29" fill="#9fb0cc" font-family="Segoe UI, Arial, sans-serif" font-size="14">Wi-Fi</text>
+  <text x="1110" y="29" fill="#9fb0cc" font-family="Segoe UI, Arial, sans-serif" font-size="14">94%</text>
+  <text x="1165" y="29" fill="#eaf0ff" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">12:04 PM</text>
+
+  <g transform="translate(54 92)">
+    <rect width="86" height="86" rx="16" fill="#111a2b" stroke="#263a63"/>
+    <path d="M43 17 L69 69 H56 L51 58 H34 L29 69 H17 L43 17 Z" fill="#f5f7ff"/>
+    <ellipse cx="43" cy="45" rx="9" ry="18" fill="url(#portal)"/>
+    <text x="43" y="120" text-anchor="middle" fill="#dce7ff" font-family="Segoe UI, Arial, sans-serif" font-size="14">Aether</text>
+  </g>
+  <g transform="translate(54 238)">
+    <rect width="86" height="86" rx="16" fill="#111a2b" stroke="#263a63"/>
+    <rect x="20" y="28" width="46" height="34" rx="5" fill="#4f8cff"/>
+    <path d="M20 32 h18 l5 6 h23 v-7 a5 5 0 0 0-5-5 H20z" fill="#7ab6ff"/>
+    <text x="43" y="120" text-anchor="middle" fill="#dce7ff" font-family="Segoe UI, Arial, sans-serif" font-size="14">Files</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="228" y="94" width="560" height="396" rx="10" fill="#0d1423" stroke="#2a4676" stroke-width="2"/>
+    <rect x="228" y="94" width="560" height="44" rx="10" fill="#111c30"/>
+    <circle cx="255" cy="116" r="6" fill="#ff5d6c"/>
+    <circle cx="278" cy="116" r="6" fill="#ffc857"/>
+    <circle cx="301" cy="116" r="6" fill="#42f58d"/>
+    <text x="336" y="122" fill="#eaf0ff" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">File Explorer</text>
+    <rect x="250" y="160" width="136" height="300" rx="8" fill="#101a2c"/>
+    <text x="272" y="192" fill="#7ab6ff" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700">Home</text>
+    <text x="272" y="228" fill="#a8b8d6" font-family="Segoe UI, Arial, sans-serif" font-size="13">Desktop</text>
+    <text x="272" y="264" fill="#a8b8d6" font-family="Segoe UI, Arial, sans-serif" font-size="13">Documents</text>
+    <text x="272" y="300" fill="#a8b8d6" font-family="Segoe UI, Arial, sans-serif" font-size="13">Downloads</text>
+    <rect x="412" y="160" width="342" height="38" rx="8" fill="#101a2c" stroke="#263a63"/>
+    <text x="432" y="184" fill="#eaf0ff" font-family="Segoe UI, Arial, sans-serif" font-size="13">Home / Documents / Projects</text>
+    <g fill="#121f35" stroke="#263a63">
+      <rect x="412" y="224" width="150" height="72" rx="8"/>
+      <rect x="586" y="224" width="150" height="72" rx="8"/>
+      <rect x="412" y="318" width="150" height="72" rx="8"/>
+      <rect x="586" y="318" width="150" height="72" rx="8"/>
+    </g>
+    <text x="436" y="266" fill="#dce7ff" font-family="Segoe UI, Arial, sans-serif" font-size="13">Aether SDK</text>
+    <text x="610" y="266" fill="#dce7ff" font-family="Segoe UI, Arial, sans-serif" font-size="13">Kernel Lab</text>
+    <text x="436" y="360" fill="#dce7ff" font-family="Segoe UI, Arial, sans-serif" font-size="13">Release Notes</text>
+    <text x="610" y="360" fill="#dce7ff" font-family="Segoe UI, Arial, sans-serif" font-size="13">Packages</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="820" y="156" width="340" height="250" rx="10" fill="#0d1423" stroke="#5947c9" stroke-width="2"/>
+    <rect x="820" y="156" width="340" height="44" rx="10" fill="#151a35"/>
+    <text x="844" y="184" fill="#eaf0ff" font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700">Aether Terminal</text>
+    <text x="846" y="230" fill="#42f58d" font-family="Consolas, monospace" font-size="14">aether&gt; sysinfo</text>
+    <text x="846" y="260" fill="#cbd6ef" font-family="Consolas, monospace" font-size="14">CPU 18%  RAM 42%  Disk 61%</text>
+    <text x="846" y="290" fill="#42f58d" font-family="Consolas, monospace" font-size="14">aether&gt; hardening</text>
+    <text x="846" y="320" fill="#cbd6ef" font-family="Consolas, monospace" font-size="14">Baseline score: 94</text>
+    <rect x="846" y="342" width="8" height="18" fill="#7ab6ff"/>
+  </g>
+
+  <rect x="360" y="666" width="560" height="64" rx="22" fill="#0a101d" stroke="#263a63"/>
+  <g fill="#101a2c" stroke="#345080">
+    <rect x="390" y="678" width="42" height="42" rx="12"/>
+    <rect x="450" y="678" width="42" height="42" rx="12"/>
+    <rect x="510" y="678" width="42" height="42" rx="12"/>
+    <rect x="570" y="678" width="42" height="42" rx="12"/>
+    <rect x="630" y="678" width="42" height="42" rx="12"/>
+    <rect x="690" y="678" width="42" height="42" rx="12"/>
+    <rect x="750" y="678" width="42" height="42" rx="12"/>
+    <rect x="810" y="678" width="42" height="42" rx="12"/>
+  </g>
+  <circle cx="411" cy="699" r="12" fill="url(#portal)"/>
+  <rect x="462" y="690" width="18" height="18" rx="4" fill="#7ab6ff"/>
+  <path d="M528 686 h10 l10 10 v16 h-20z" fill="#9b5cff"/>
+  <circle cx="591" cy="699" r="12" fill="#42f58d"/>
+  <rect x="641" y="691" width="20" height="16" rx="4" fill="#ffc857"/>
+  <path d="M701 710 l10-24 l10 24z" fill="#ff7a90"/>
+  <rect x="761" y="688" width="20" height="22" rx="5" fill="#f5f7ff"/>
+  <circle cx="831" cy="699" r="11" fill="#4f8cff"/>
+</svg>

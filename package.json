@@ -1,0 +1,42 @@
+{
+  "name": "aetheros",
+  "version": "1.1.2",
+  "description": "A runnable Tauri desktop shell prototype for a modern OS-style environment.",
+  "private": true,
+  "license": "Apache-2.0",
+  "type": "module",
+  "keywords": [
+    "tauri",
+    "vite",
+    "typescript",
+    "rust",
+    "desktop-shell",
+    "operating-system",
+    "window-manager"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "vite",
+    "tauri": "tauri",
+    "tauri:dev": "tauri dev",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm run build && npm run rust:check && npm run system:doctor",
+    "rust:check": "cargo check --locked --manifest-path src-tauri/Cargo.toml",
+    "aether": "node cli/aether.mjs",
+    "system:doctor": "node cli/aether.mjs doctor",
+    "system:status": "node cli/aether.mjs status",
+    "build": "vite build",
+    "tauri:build": "tauri build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.8.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.8.4",
+    "typescript": "^5.6.3",
+    "vite": "^8.0.10"
+  }
+}

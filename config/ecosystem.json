@@ -1,0 +1,46 @@
+{
+  "schema": "aether.ecosystem.v1",
+  "identity": {
+    "name": "Aether Ecosystem",
+    "localRegistry": "aether.market.local",
+    "publisherRoot": "pkg/publish",
+    "sdkChannel": "stable",
+    "trustMode": "signed-or-prompt"
+  },
+  "storefront": {
+    "featuredCollections": ["Essential Apps", "Developer Tools", "Creator Studio", "Security Extensions", "System Utilities"],
+    "channels": [
+      { "id": "stable", "name": "Stable", "signed": true, "updates": "automatic-after-restore-point" },
+      { "id": "beta", "name": "Beta", "signed": true, "updates": "prompt" },
+      { "id": "nightly", "name": "Nightly", "signed": false, "updates": "developer-mode-only" }
+    ],
+    "reviewPolicy": {
+      "requiresInstalledApp": true,
+      "moderation": "local-first-queue",
+      "signals": ["rating", "crash-rate", "permission-scope", "publisher-trust"]
+    }
+  },
+  "apps": [
+    { "id": "aurora-mail", "name": "Aurora Mail", "kind": "productivity", "channel": "stable", "publisher": "Aether Labs", "trust": "verified", "entry": "apps/aurora-mail/aether.app.json", "capabilities": ["notifications", "network"], "installed": false },
+    { "id": "nebula-code", "name": "Nebula Code", "kind": "developer", "channel": "stable", "publisher": "Aether Labs", "trust": "verified", "entry": "apps/nebula-code/aether.app.json", "capabilities": ["filesystem.read", "filesystem.write", "terminal.exec"], "installed": false },
+    { "id": "orbit-music", "name": "Orbit Music", "kind": "media", "channel": "stable", "publisher": "Aether Labs", "trust": "verified", "entry": "apps/orbit-music/aether.app.json", "capabilities": ["filesystem.read", "notifications"], "installed": false },
+    { "id": "atlas-db", "name": "Atlas DB", "kind": "developer", "channel": "beta", "publisher": "Community", "trust": "prompt", "entry": "apps/atlas-db/aether.app.json", "capabilities": ["filesystem.read", "network"], "installed": false }
+  ],
+  "extensionPoints": [
+    { "id": "shell.start.provider", "name": "Start recommendations", "capability": "shell.extend", "review": "required" },
+    { "id": "taskbar.jumpList", "name": "Taskbar jump lists", "capability": "shell.extend", "review": "required" },
+    { "id": "file.preview", "name": "File preview handlers", "capability": "filesystem.read", "review": "required" },
+    { "id": "settings.page", "name": "Settings pages", "capability": "settings.extend", "review": "required" },
+    { "id": "search.provider", "name": "Search providers", "capability": "search.index", "review": "required" }
+  ],
+  "protocols": [
+    { "scheme": "aether", "handler": "runtime", "description": "Open Aether app and settings links" },
+    { "scheme": "aetherpkg", "handler": "marketplace", "description": "Install local or registry package references" },
+    { "scheme": "aether-dev", "handler": "sdk", "description": "Open SDK scaffolds and publisher flows" }
+  ],
+  "publishing": {
+    "steps": ["scaffold", "manifest-validate", "permission-review", "package", "sign-placeholder", "publish-local"],
+    "requiredFiles": ["aether.app.json", "dist/index.html", "README.md"],
+    "qualityGates": ["no-overlap-ui", "keyboard-focus", "permission-minimal", "crash-bundle-ready"]
+  }
+}

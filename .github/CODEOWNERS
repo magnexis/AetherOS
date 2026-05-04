@@ -1,0 +1,8 @@
+# Update owner names after publishing the repository.
+
+* @YOUR_USERNAME
+
+/src-tauri/ @YOUR_USERNAME
+/src/ @YOUR_USERNAME
+/docs/ @YOUR_USERNAME
+/.github/ @YOUR_USERNAME

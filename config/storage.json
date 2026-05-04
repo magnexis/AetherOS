@@ -1,0 +1,18 @@
+{
+  "schema": "aether.storage.v1",
+  "volumes": [
+    { "id": "system", "label": "Aether System", "mount": "AetherFS:/", "filesystem": "aether-vfs", "capacityGb": 512, "usedGb": 188, "encrypted": true, "health": "healthy" },
+    { "id": "home", "label": "Home", "mount": "AetherFS:/Users", "filesystem": "aether-vfs", "capacityGb": 256, "usedGb": 91, "encrypted": true, "health": "healthy" },
+    { "id": "cache", "label": "System Cache", "mount": "AetherFS:/System/cache", "filesystem": "cachefs", "capacityGb": 32, "usedGb": 11, "encrypted": false, "health": "trim-needed" }
+  ],
+  "quotas": [
+    { "user": "matth", "volume": "home", "limitGb": 200, "usedGb": 91 },
+    { "user": "guest", "volume": "home", "limitGb": 12, "usedGb": 1 }
+  ],
+  "maintenance": {
+    "autoTrim": true,
+    "deduplicateCache": true,
+    "warnAtPercent": 85,
+    "cleanupTargets": ["cache", "downloads", "trash", "old-update-staging"]
+  }
+}

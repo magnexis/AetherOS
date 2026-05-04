@@ -1,0 +1,31 @@
+{
+  "schema": "aether.drivers.manifest.v1",
+  "signaturePolicy": "require-signed",
+  "profiles": [
+    { "id": "balanced", "description": "Default driver binding with signed kernel drivers and user-mode input/network services.", "drivers": ["aether-display", "aether-nvme", "aether-net", "aether-hid", "shield-filter"] },
+    { "id": "safe", "description": "Minimal safe profile with display, storage, and HID only.", "drivers": ["aether-display", "aether-nvme", "aether-hid"] },
+    { "id": "performance", "description": "Gaming and creator profile with audio, display, network, storage, HID, and Shield filter.", "drivers": ["aether-display", "aether-nvme", "aether-net", "aether-hid", "aether-audio", "shield-filter"] }
+  ],
+  "drivers": [
+    { "id": "aether-display", "name": "Aether Display Driver", "className": "Display", "mode": "kernel", "status": "running", "signed": true, "required": true, "version": "0.4.0", "profile": "balanced", "rollback": "0.3.8", "hardware": ["PCI\\VEN_AE01&DEV_GPU0"], "warnings": [] },
+    { "id": "aether-nvme", "name": "Aether NVMe Storage", "className": "Storage", "mode": "kernel", "status": "running", "signed": true, "required": true, "version": "0.5.1", "profile": "balanced", "rollback": "0.5.0", "hardware": ["NVME\\AETHER_SYSTEM_DISK"], "warnings": [] },
+    { "id": "aether-net", "name": "AetherNet Adapter", "className": "Network", "mode": "user", "status": "running", "signed": true, "required": false, "version": "0.2.9", "profile": "balanced", "rollback": "0.2.7", "hardware": ["PCI\\VEN_AE02&DEV_NET0"], "warnings": [] },
+    { "id": "aether-hid", "name": "Aether HID Input", "className": "Input", "mode": "user", "status": "running", "signed": true, "required": true, "version": "1.1.0", "profile": "balanced", "rollback": "1.0.9", "hardware": ["USB\\VID_AE10&PID_HID"], "warnings": [] },
+    { "id": "aether-audio", "name": "Aether Audio Mixer", "className": "Audio", "mode": "user", "status": "stopped", "signed": true, "required": false, "version": "0.3.2", "profile": "performance", "rollback": "0.3.0", "hardware": ["HDAUDIO\\FUNC_01&VEN_AE20"], "warnings": ["disabled in balanced profile"] },
+    { "id": "shield-filter", "name": "Shield Filesystem Filter", "className": "Security", "mode": "kernel", "status": "running", "signed": true, "required": false, "version": "0.6.0", "profile": "balanced", "rollback": "0.5.8", "hardware": ["ROOT\\AETHER_SHIELD_FILTER"], "warnings": [] }
+  ],
+  "blockedDrivers": [
+    { "id": "unsigned-storage-test", "reason": "Unsigned kernel storage filter", "blockedAt": "2026-05-04T00:00:00.000Z" }
+  ],
+  "history": [
+    { "driver": "aether-display", "from": "0.3.8", "to": "0.4.0", "action": "updated", "result": "ok" },
+    { "driver": "aether-audio", "from": "0.3.0", "to": "0.3.2", "action": "rolled-forward", "result": "disabled-pending-profile" }
+  ],
+  "devices": [
+    { "id": "gpu0", "bus": "PCIe", "name": "Aether GPU 0", "driver": "aether-display", "state": "ready", "location": "PCI bus 1, device 0", "events": ["driver-bound", "profile-balanced"] },
+    { "id": "disk0", "bus": "NVMe", "name": "System Disk", "driver": "aether-nvme", "state": "ready", "location": "NVMe slot 0", "events": ["driver-bound", "trim-enabled"] },
+    { "id": "hid0", "bus": "USB", "name": "Keyboard + Pointer Hub", "driver": "aether-hid", "state": "ready", "location": "USB root hub 2", "events": ["driver-bound"] },
+    { "id": "power0", "bus": "ACPI", "name": "Power Button", "driver": "acpi-power", "state": "sleeping", "location": "ACPI fixed feature", "events": ["sleep-capable"] },
+    { "id": "vmbus0", "bus": "Virtual", "name": "Compatibility VM Bus", "driver": "hypercore.sys", "state": "needs-driver", "location": "HyperCore virtual bus", "events": ["module-not-loaded"] }
+  ]
+}

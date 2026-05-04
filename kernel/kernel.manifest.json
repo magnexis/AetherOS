@@ -1,0 +1,44 @@
+{
+  "schema": "aether.kernel.manifest.v1",
+  "name": "AetherCore",
+  "version": "0.1.0",
+  "abi": "aether-kernel-0",
+  "mode": "hybrid-prototype",
+  "rings": [
+    { "ring": -1, "name": "HyperCore", "purpose": "transparent compatibility and isolation model" },
+    { "ring": 0, "name": "AetherCore", "purpose": "sealed kernel services" },
+    { "ring": 3, "name": "UserDomain", "purpose": "capability-gated apps and services" }
+  ],
+  "boot": {
+    "profile": "balanced",
+    "panicPolicy": "capture-replay-and-restart-shell",
+    "recoveryPolicy": "standard-auto-repair",
+    "powerState": "S0 Active"
+  },
+  "subsystems": [
+    "scheduler",
+    "memory",
+    "vfs",
+    "capabilities",
+    "ipc",
+    "streams",
+    "device-manager",
+    "module-loader",
+    "syscalls",
+    "interrupts"
+  ],
+  "syscalls": [
+    { "id": 1, "name": "open_cap", "policy": "requires object token" },
+    { "id": 2, "name": "map_shared", "policy": "domain checked" },
+    { "id": 3, "name": "spawn_task", "policy": "profile capability" },
+    { "id": 4, "name": "subscribe_stream", "policy": "bounded callback" },
+    { "id": 5, "name": "install_pkg", "policy": "signature gate" }
+  ],
+  "modules": [
+    { "name": "scheduler.sys", "version": "2.1.0", "loaded": true, "trust": "core" },
+    { "name": "vfs.sys", "version": "1.8.3", "loaded": true, "trust": "core" },
+    { "name": "capability.sys", "version": "0.9.7", "loaded": true, "trust": "signed" },
+    { "name": "streambus.sys", "version": "0.4.0", "loaded": false, "trust": "experimental" },
+    { "name": "hypercore.sys", "version": "0.2.5", "loaded": false, "trust": "experimental" }
+  ]
+}

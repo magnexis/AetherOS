@@ -1,0 +1,30 @@
+{
+  "schema": "aether.eventbus.v1",
+  "streamPath": "logs/events/aether-events.jsonl",
+  "retentionDays": 14,
+  "topics": [
+    { "id": "services", "description": "Service state, health, logs, and restart events", "subscribers": ["aether-recoveryd", "aether-shelld"] },
+    { "id": "packages", "description": "Package installs, removes, verifies, dependencies, and rollbacks", "subscribers": ["aether-pkgd", "aether-shelld"] },
+    { "id": "files", "description": "File operations, trash moves, copy queue, scans, and index updates", "subscribers": ["aether-indexd", "aether-shieldd"] },
+    { "id": "recovery", "description": "Snapshots, restore points, repair actions, and health reports", "subscribers": ["aether-recoveryd", "aether-shelld"] },
+    { "id": "security", "description": "Permission prompts, capability grants, blocked drivers, and scanner events", "subscribers": ["aether-shieldd", "aether-shelld"] },
+    { "id": "notifications", "description": "Native and in-shell notification lifecycle events", "subscribers": ["aether-shelld"] },
+    { "id": "updates", "description": "Update check, staging, verification, apply, rollback, and restart-required events", "subscribers": ["aether-updated", "aether-recoveryd"] }
+    ,
+    { "id": "network", "description": "Interface, DNS, firewall, VPN, and profile events", "subscribers": ["aether-netd", "aether-auditd"] },
+    { "id": "accounts", "description": "Login, lock, elevation, user profile, and session events", "subscribers": ["aether-accountsd", "aether-auditd"] },
+    { "id": "storage", "description": "Volume, quota, cleanup, trim, encryption, and health events", "subscribers": ["aether-storaged", "aether-backupd"] },
+    { "id": "audit", "description": "Security, policy, admin, auth, and export audit events", "subscribers": ["aether-auditd"] },
+    { "id": "backup", "description": "Backup plan, restore, retention, and verification events", "subscribers": ["aether-backupd", "aether-recoveryd"] },
+    { "id": "policy", "description": "Policy evaluation, enforcement, warning, and violation events", "subscribers": ["aether-policyd", "aether-auditd"] },
+    { "id": "experience", "description": "Start, taskbar, widgets, shortcuts, snap layouts, and shell extension events", "subscribers": ["aether-experienced", "aether-shelld"] },
+    { "id": "ecosystem", "description": "Storefront, publishing, reviews, extension points, protocols, and app trust events", "subscribers": ["aether-ecosystemd", "aether-pkgd", "aether-shelld"] },
+    { "id": "hardening", "description": "Baseline scoring, control enforcement, threat model changes, and security posture events", "subscribers": ["aether-hardeningd", "aether-policyd", "aether-auditd", "aether-shelld"] }
+  ],
+  "eventClasses": ["info", "success", "warning", "critical", "audit"],
+  "delivery": {
+    "mode": "append-only-jsonl",
+    "backpressure": "drop-debug-keep-audit",
+    "replayWindow": 250
+  }
+}

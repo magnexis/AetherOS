@@ -1,0 +1,14 @@
+{
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "files.eol": "\r\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "rust-analyzer.check.command": "check",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "search.exclude": {
+    "node_modules": true,
+    "dist": true,
+    "src-tauri/target": true
+  }
+}

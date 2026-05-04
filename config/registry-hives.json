@@ -1,0 +1,18 @@
+{
+  "schema": "aether.registry.hives.v1",
+  "hives": [
+    { "id": "HKLM\\Kernel", "owner": "kernel", "path": "kernel/kernel.manifest.json", "protected": true, "description": "Kernel ABI, modules, syscalls, boot, panic, and recovery policy." },
+    { "id": "HKLM\\Services", "owner": "services", "path": "services/services.manifest.json", "protected": true, "description": "Daemon metadata, health, restart policy, permissions, and dependencies." },
+    { "id": "HKLM\\Drivers", "owner": "drivers", "path": "drivers/drivers.manifest.json", "protected": true, "description": "Driver inventory, device tree, profile history, rollback metadata, and blocked drivers." },
+    { "id": "HKLM\\Packages", "owner": "pkg", "path": "pkg/registry.json", "protected": true, "description": "Package repositories, installed state, package constraints, and protected packages." },
+    { "id": "HKLM\\Security", "owner": "security", "path": "security/policy.json", "protected": true, "description": "Capability tokens, admin actions, denied behaviors, and prompt policy." },
+    { "id": "HKCU\\Shell", "owner": "ui", "path": "ui/shell.manifest.json", "protected": false, "description": "Graphical shell entry points and integration map." },
+    { "id": "HKLM\\Tasks", "owner": "system", "path": "config/task-scheduler.json", "protected": false, "description": "Scheduled tasks and event-triggered automation." },
+    { "id": "HKLM\\Startup", "owner": "system", "path": "config/startup-apps.json", "protected": false, "description": "Startup app registration, delay, startup impact, and enablement state." }
+  ],
+  "editorPolicy": {
+    "requiresAdminForProtectedHives": true,
+    "snapshotBeforeProtectedWrite": true,
+    "auditTopic": "security"
+  }
+}

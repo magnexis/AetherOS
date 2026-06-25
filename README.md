@@ -6,6 +6,7 @@
 [![UI](https://img.shields.io/badge/UI-Vanilla%20TypeScript-f5f7ff)](src/main.ts)
 [![Backend](https://img.shields.io/badge/backend-Rust-ff7a90)](src-tauri/src/main.rs)
 [![Security](https://img.shields.io/badge/security-hardening%20baseline%2094-42f58d)](docs/security-hardening.md)
+[![npm](https://img.shields.io/npm/v/aetheros-2?style=for-the-badge&logo=npm)](https://www.npmjs.com/package/aetheros-2)
 
 AetherOS is the first working foundation of a modern operating-system-style desktop shell. It is a runnable Tauri desktop application with a custom shell UI, an internal window manager, built-in apps, persistent state, Rust-backed filesystem access, live system metrics, a JSON package registry, a backend command bridge, advanced OS research surfaces, and the Aether Nexus command center.
 

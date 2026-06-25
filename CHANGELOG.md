@@ -4,14 +4,15 @@ All notable AetherOS changes should be recorded here.
 
 This project currently moves quickly, so entries are grouped by foundation phase rather than published semver releases.
 
+## 1.1.3
+
+### Bug Fixes
+
+- Fixed localStorage crash when corrupt or oversized data caused unhandled exceptions on shell startup.
+- Fixed postMessage event handler not validating event.origin, allowing cross-origin message injection.
+
 ## Unreleased
 
-- Built the Windows x64 release artifacts for v1.1.2:
-  - `release/AetherOS-1.1.2-windows-x64-setup.exe`
-  - `release/AetherOS-1.1.2-windows-x64-portable.exe`
-  - `release/AetherOS-1.1.2-windows-x64.msi`
-- Added release metadata under `release/`, including release notes and SHA-256 checksums.
-- Updated GitHub release guidance so binaries are uploaded to GitHub Releases instead of committed.
 - Added Aether Nexus command center with live system graph, workspace modes, automation rules, self-healing diagnostics, Time Ribbon, Command Mesh, terminal command, command palette entry, search entry, Settings link, desktop icon, and Ctrl+Shift+X shortcut.
 - Expanded Kernel Lab with single address space, protection domains, transparent compatibility VM model, formal verification, semantic filesystem queries, deterministic replay, object capabilities, zero-copy IPC, reactive streams, live patching, hardware acceleration, schedulers, eBPF-style VM, ZRAM, VFS, and namespaces.
 - Added desktop maturity features including Start Menu 2.0, taskbar previews, system tray, desktop context menu, Control Panel, Assistant, user profile surfaces, audio/display settings, recovery controls, and Marketplace expansion.

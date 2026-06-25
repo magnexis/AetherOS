@@ -1,6 +1,6 @@
 # AetherOS Desktop Shell Foundation
 
-[![Release](https://img.shields.io/badge/release-v1.1.2-7b61ff)](release/RELEASE_NOTES_v1.1.2.md)
+[![Release](https://img.shields.io/badge/release-v1.1.3-7b61ff)](release/RELEASE_NOTES_v1.1.3.md)
 [![License](https://img.shields.io/badge/license-Apache--2.0-42f58d)](LICENSE)
 [![Desktop](https://img.shields.io/badge/desktop-Tauri%20%2B%20Vite-4f8cff)](src-tauri/tauri.conf.json)
 [![UI](https://img.shields.io/badge/UI-Vanilla%20TypeScript-f5f7ff)](src/main.ts)

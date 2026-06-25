@@ -370,6 +370,7 @@ export class AetherDesktop {
       }
     });
     window.addEventListener("message", (event) => {
+      if (event.origin !== window.location.origin) return;
       if (event.data?.type === "aether-notify") this.notify("Runtime app", String(event.data.body), "success");
     });
     window.addEventListener("aether:snap-preview", ((event: CustomEvent<string>) => {

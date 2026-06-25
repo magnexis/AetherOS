@@ -18,7 +18,13 @@ export type PersistedState = {
 export async function loadPersistedState(): Promise<PersistedState> {
   return invokeCommand<PersistedState>("load_state", undefined, () => {
     const stored = localStorage.getItem("aether-state");
-    return stored ? JSON.parse(stored) : {};
+    if (!stored) return {};
+    try {
+      return JSON.parse(stored);
+    } catch {
+      localStorage.removeItem("aether-state");
+      return {};
+    }
   });
 }
 
